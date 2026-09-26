@@ -1,0 +1,155 @@
+export const photos = {
+  bench: {
+    src: "/images/bench-ups.jpg",
+    alt: "A One Electricals technician repairing a UPS at the Kumar Swamy Layout shop",
+    caption: "Repair work at A One Electricals, Kumar Swamy Layout.",
+    position: "32% 42%",
+  },
+  heroMobile: {
+    src: "/images/hero-mobile.jpg",
+    alt: "Electrician repairing an opened UPS at the Kumar Swamy Layout shop",
+    caption: "Repair work at A One Electricals, Kumar Swamy Layout.",
+    position: "50% 36%",
+  },
+  heroDesktop: {
+    src: "/images/hero-desktop-brand.jpg",
+    alt: "A One Electricals technician repairing a UPS at the Kumar Swamy Layout shop",
+    caption: "Repair work at A One Electricals, Kumar Swamy Layout.",
+    position: "50% 38%",
+  },
+  switch: {
+    src: "/images/switch-point.jpg",
+    alt: "Electrician fitting a modular switchboard on a house wall",
+    caption: "Points and boards on a house visit.",
+    position: "50% 55%",
+  },
+  buildingWiring: {
+    src: "/images/building-wiring-service.jpg",
+    alt: "A One Electricals technician wiring conduit and a distribution board in an unfinished Bengaluru flat",
+    caption: "House and building wiring on a Bengaluru site visit.",
+    position: "34% 42%",
+  },
+  fan: {
+    src: "/images/ceiling-fan.jpg",
+    alt: "Electrician wiring a ceiling fan in a Bengaluru home",
+    caption: "Installation inside a Bengaluru home.",
+    position: "50% 28%",
+  },
+  mixer: {
+    src: "/images/mixer-service.jpg",
+    alt: "A One Electricals technician repairing an opened mixer grinder on a kitchen counter",
+    caption: "Mixer grinder repair at the A One Electricals shop.",
+    position: "46% 42%",
+  },
+  cable: {
+    src: "/images/three-core-cable.jpg",
+    alt: "Cut three-core cable showing live, neutral, and earth conductors",
+    caption: "Live, neutral, and earth — how the shop talks about current.",
+    position: "50% 50%",
+  },
+  geyser: {
+    src: "/images/geyser-service.jpg",
+    alt: "A One Electricals technician repairing an opened storage geyser on a bathroom wall",
+    caption: "Geyser repair and installation of the kind we do on Kumar Swamy Layout visits.",
+    position: "58% 42%",
+  },
+  wiringDb: {
+    src: "/images/wiring-db-landscape.jpg",
+    alt: "Open distribution board with live, neutral, and earth wiring in a Bengaluru flat",
+    caption: "Boards and circuits planned for how a kitchen actually runs.",
+    position: "50% 45%",
+  },
+  mixerMotor: {
+    src: "/images/mixer-service.jpg",
+    alt: "A One Electricals technician repairing an opened mixer grinder on a kitchen counter",
+    caption: "Motors opened in the shop, not guessed on a phone call.",
+    position: "46% 42%",
+  },
+  spares: {
+    src: "/images/spares-parts-portrait.jpg",
+    alt: "Mixer jars, blades, couplings, and spare parts laid out on a steel table",
+    caption: "The small parts that keep a mixer in daily masala work.",
+    position: "50% 42%",
+  },
+  sparesWide: {
+    src: "/images/spares-parts-landscape.jpg",
+    alt: "Mixer spare jars, blades, and couplings in a row at the shop",
+    caption: "Jars, blades, and couplings ready for a kitchen that cannot wait.",
+    position: "50% 50%",
+  },
+  geyserWide: {
+    src: "/images/geyser-service.jpg",
+    alt: "A One Electricals technician repairing an opened storage geyser on a bathroom wall",
+    caption: "A bath that needs hot water again, wired from the same number.",
+    position: "58% 42%",
+  },
+  ups: {
+    src: "/images/ups-inverter-portrait.jpg",
+    alt: "Home inverter and tubular batteries in a Bengaluru apartment utility corner",
+    caption: "Home UPS and inverter work from the Kumar Swamy Layout shop.",
+    position: "50% 46%",
+  },
+  upsWide: {
+    src: "/images/ups-inverter-landscape.jpg",
+    alt: "Home inverter and battery set installed in an apartment utility nook",
+    caption: "Inverter, battery, and the cables that keep the lights through a cut.",
+    position: "50% 50%",
+  },
+  upsWiring: {
+    src: "/images/ups-wiring-service.jpg",
+    alt: "A One Electricals technician wiring a home UPS beside the distribution board and batteries",
+    caption: "UPS wiring from the Kumar Swamy Layout shop.",
+    position: "42% 42%",
+  },
+  fanInstall: {
+    src: "/images/fan-ceiling-portrait.jpg",
+    alt: "Ceiling fan being wired at the ceiling rose in a Bengaluru living room",
+    caption: "Hang, wire, and the living room has air again.",
+    position: "50% 32%",
+  },
+  fanRewind: {
+    src: "/images/fan-rewind-landscape.jpg",
+    alt: "Ceiling fan motor being repaired with copper wire at the shop",
+    caption: "Repair the motor in the shop, then fit it back on the hook.",
+    position: "50% 48%",
+  },
+  washer: {
+    src: "/images/washing-machine-service.jpg",
+    alt: "A One Electricals technician repairing an opened front-load washing machine",
+    caption: "Washing machine repair from the Kumar Swamy Layout shop.",
+    position: "62% 42%",
+  },
+  gasStove: {
+    src: "/images/gas-stove-service.jpg",
+    alt: "A One Electricals technician servicing an opened glass gas stove on a kitchen counter",
+    caption: "Gas stove service from the Kumar Swamy Layout shop.",
+    position: "55% 45%",
+  },
+  waterPump: {
+    src: "/images/water-pump-service.jpg",
+    alt: "A One Electricals technician repairing a water pump motor at the shop",
+    caption: "Water pump motor repair from the Kumar Swamy Layout shop.",
+    position: "48% 42%",
+  },
+  workshop: {
+    src: "/images/workshop-tools-portrait.jpg",
+    alt: "Shop table with a meter, cable, and an open fan motor",
+    caption: "The Kumar Swamy Layout shop: tools, cable, and the job in front of you.",
+    position: "50% 42%",
+  },
+  neighborhood: {
+    src: "/images/jp-nagar-house-portrait.jpg",
+    alt: "Independent house in a South Bengaluru neighborhood like Kumar Swamy Layout",
+    caption: "South Bengaluru houses of the kind we wire and visit.",
+    position: "50% 40%",
+  },
+  city: {
+    src: "/images/bengaluru-street-landscape.jpg",
+    alt: "Residential street in Bengaluru with independent houses and service wires",
+    caption: "The shop is in Kumar Swamy Layout. The phone is for the city.",
+    position: "50% 48%",
+  },
+} as const;
+
+export type Photo = (typeof photos)[keyof typeof photos];
+export type PhotoKey = keyof typeof photos;
