@@ -5,7 +5,6 @@ import { Fraunces, Outfit } from "next/font/google";
 import { LeadDock } from "@/components/lead-dock";
 import { ServicePrompt } from "@/components/service-prompt";
 import { JsonLd } from "@/components/json-ld";
-import { CircuitRail } from "@/components/circuit-rail";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { localBusinessJsonLd, websiteJsonLd } from "@/lib/seo";
 import { getSiteUrl, isIndexableHost, siteConfig } from "@/lib/site";
@@ -83,7 +82,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Script id="aone-theme" strategy="beforeInteractive">
           {themeInit}
         </Script>
-        <CircuitRail />
         <JsonLd data={localBusinessJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <a className="skip-link" href="#main">
