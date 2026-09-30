@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { AreasServedLinks } from "@/components/areas-served-links";
 import { CtaPair, TextNavLink, TextPhoneLink } from "@/components/cta-links";
 import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
@@ -13,28 +14,29 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "House Wiring in Kumar Swamy Layout",
+  title: "House Wiring & Rewiring in JP Nagar, Jayanagar",
   description:
-    "Building wiring in Kumar Swamy Layout and around Bengaluru: new flats, independent houses, shop boards, points, DBs, and earthing. Call A One Electricals at +91 70225 16735.",
+    "New house wiring, old-home rewiring, DB/MCB boards and earthing across Kumaraswamy Layout, JP Nagar, Jayanagar, BTM and Konanakunte Cross. Clear quotes. Call +91 70225 16735.",
   path: "/building-wiring",
   keywords: [
-    "house wiring Kumar Swamy Layout",
+    "house wiring JP Nagar",
+    "house wiring Kumaraswamy Layout",
+    "rewiring Jayanagar",
     "building wiring Bengaluru",
-    "electrician Kumar Swamy Layout",
-    "new flat wiring Bangalore",
+    "electrician Kumaraswamy Layout",
   ],
 });
 
 const faqs = [
   {
-    question: "Do you wire new apartments in Kumar Swamy Layout?",
+    question: "Do you wire new apartments in Kumaraswamy Layout?",
     answer:
       "Yes. Concealed points, boards, and the extra circuits kitchens actually use — mixer, chimney, geyser — are the usual brief in new South Bengaluru flats.",
   },
   {
     question: "Can you look at an old independent house that trips?",
     answer:
-      "That is common around Kumar Swamy Layout and Jayanagar: aluminium leftovers, overloaded kitchen points, no earthing worth the name. WhatsApp a photo of the DB and the room that dies first.",
+      "That is common around Kumaraswamy Layout and Jayanagar: aluminium leftovers, overloaded kitchen points, no earthing worth the name. WhatsApp a photo of the DB and the room that dies first.",
   },
   {
     question: "Is this the same team as mixer repair?",
@@ -55,7 +57,7 @@ export default function BuildingWiringPage() {
       />
       <JsonLd
         data={serviceJsonLd({
-          name: "Building and house wiring in Kumar Swamy Layout, Bengaluru",
+          name: "Building and house wiring in Kumaraswamy Layout, Bengaluru",
           description:
             "House wiring, apartment points, distribution boards, and earthing from A One Electricals.",
           path: "/building-wiring",
@@ -70,12 +72,13 @@ export default function BuildingWiringPage() {
         ]}
       />
       <PageHero
-        kicker="Building current · Bengaluru"
-        title="Building wiring for Kumar Swamy Layout homes, shops, and new flats"
-        lede="South Bengaluru keeps adding floors. The mixer on the platform is only as good as the point behind it. A One Electricals wires houses, shops, and apartments from Kumar Swamy Layout and takes wiring calls from around the city."
+        kicker="Building current · South Bengaluru"
+        title="House and building wiring in South Bengaluru"
+        lede="New house wiring, old-home rewiring, DB/MCB boards and earthing across Kumaraswamy Layout, JP Nagar, Jayanagar, BTM and Konanakunte Cross. Clear quotes from the Ilyas Nagar workshop."
         image={{
           label: "Distribution board / wiring site",
           photo: photos.buildingWiring,
+          alt: "House wiring and distribution board work by A One Electricals",
           ratio: "portrait",
         }}
       >
@@ -87,7 +90,7 @@ export default function BuildingWiringPage() {
           Wiring that matches how a Bengaluru kitchen actually runs
         </h2>
         <p>
-          Search “electrician in Kumar Swamy Layout” and you get a wall of generic contractor
+          Search “electrician in Kumaraswamy Layout” and you get a wall of generic contractor
           pages. This one is specific: we plan circuits for mixer grinders that draw
           hard, geysers that share a line they should not, and living rooms that grew
           two ACs after the original board was fixed.
@@ -106,7 +109,7 @@ export default function BuildingWiringPage() {
           <li>New points and power circuits in kitchens and utility areas.</li>
           <li>Distribution boards and MCBs that match the load you already have.</li>
           <li>Earthing checks where shock on the mixer body is the first complaint.</li>
-          <li>Shop and small-office boards around Kumar Swamy Layout, Jayanagar, and BTM.</li>
+          <li>Shop and small-office boards around Kumaraswamy Layout, Jayanagar, and BTM.</li>
         </ul>
         <p>
           Mixer motors and jars stay at the{" "}
@@ -124,6 +127,7 @@ export default function BuildingWiringPage() {
           <FaqList items={faqs} />
         </div>
       </section>
+      <AreasServedLinks />
     </>
   );
 }

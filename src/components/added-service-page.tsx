@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { AreasServedLinks } from "@/components/areas-served-links";
 import { CtaPair } from "@/components/cta-links";
 import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
@@ -58,6 +59,7 @@ export function AddedServicePage({ service }: { service: AddedService }) {
           <FaqList items={[...service.faqs]} />
         </div>
       </section>
+      <AreasServedLinks />
       <MoreServices current={service.href} />
     </>
   );

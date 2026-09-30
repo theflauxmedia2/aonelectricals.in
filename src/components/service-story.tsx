@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { AreasServedLinks } from "@/components/areas-served-links";
 import { CtaPair } from "@/components/cta-links";
 import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
@@ -77,6 +78,7 @@ export function ServiceStory({
           <FaqList items={faqs} />
         </div>
       </section>
+      <AreasServedLinks />
       <MoreServices current={service.href} />
     </>
   );

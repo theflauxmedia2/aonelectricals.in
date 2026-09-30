@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { CtaPair, TextPhoneLink } from "@/components/cta-links";
+import { CtaPair, TextNavLink, TextPhoneLink } from "@/components/cta-links";
 import { InquiryForm } from "@/components/inquiry-form";
 import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/site-chrome";
 import { ShopMap } from "@/components/shop-map";
 import { SocialButtons } from "@/components/social-buttons";
+import { primaryAreas } from "@/lib/areas";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { photos } from "@/lib/photos";
 import { getSiteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact A One Electricals",
+  title: "Contact A One Electricals, Kumaraswamy Layout | Call/WhatsApp",
   description:
-    "Contact A One Electricals at 8th Cross, Ilyas Nagar, Kumar Swamy Layout, Bengaluru 560111. Call or WhatsApp +91 70225 16735 for mixer, geyser, UPS, ceiling fan, wiring, and spares.",
+    "Visit 8th Cross, Ilyas Nagar, Kumaraswamy Layout, Bengaluru or call/WhatsApp +91 70225 16735. Hours, directions from JP Nagar and Konanakunte Cross metro.",
   path: "/contact",
   keywords: [
     "A One Electricals contact",
     "mixer repair WhatsApp Bengaluru",
-    "electrician Kumar Swamy Layout phone",
+    "electrician Kumaraswamy Layout phone",
     "A One Electricals Ilyas Nagar",
-    "8th Cross Kumar Swamy Layout 560111",
+    "8th Cross Kumaraswamy Layout 560111",
   ],
 });
 
@@ -49,10 +50,10 @@ export default function ContactPage() {
       />
       <PageHero
         kicker="Desk · live number"
-        title="Call or WhatsApp A One Electricals in Kumar Swamy Layout"
-        lede="The shop is at 8th Cross, Ilyas Nagar, Kumar Swamy Layout. Phone and WhatsApp are the same number. There is no email published here on purpose."
+        title="Contact & directions"
+        lede="The shop is at 8th Cross, Ilyas Nagar, Kumaraswamy Layout. Phone and WhatsApp are the same number. There is no email published here on purpose."
         image={{
-          label: "Kumar Swamy Layout neighborhood",
+          label: "Kumaraswamy Layout neighborhood",
           photo: photos.neighborhood,
           ratio: "portrait",
         }}
@@ -117,6 +118,19 @@ export default function ContactPage() {
             <TextPhoneLink /> before you come, so someone is free for the job.
           </p>
           <ShopMap />
+          <div>
+            <h2 className="font-heading text-2xl">Directions from nearby areas</h2>
+            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+              {primaryAreas
+                .filter((area) => area.slug !== "kumaraswamy-layout")
+                .map((area) => (
+                  <li key={area.slug}>
+                    <TextNavLink href={area.href}>{area.name}</TextNavLink>:{" "}
+                    {area.distanceFromWorkshop}. Landmark: {area.landmarks[0]}.
+                  </li>
+                ))}
+            </ul>
+          </div>
         </aside>
         <InquiryForm />
       </section>

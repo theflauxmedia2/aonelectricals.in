@@ -3,7 +3,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
-export const alt = `${siteConfig.name} — electrician in Kumar Swamy Layout, Bengaluru. ${siteConfig.phoneDisplay}`;
+export const alt = `${siteConfig.name} — electrician in Kumaraswamy Layout, Bengaluru. ${siteConfig.phoneDisplay}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -34,7 +34,7 @@ export default async function OpenGraphImage() {
             {siteConfig.name}
           </div>
           <div style={{ fontSize: 32, color: "#5A5A5A", maxWidth: 900 }}>
-            Electrical repair & installation · Kumar Swamy Layout, Bengaluru
+            Electrical repair & installation · Kumaraswamy Layout, Bengaluru
           </div>
         </div>
         <div

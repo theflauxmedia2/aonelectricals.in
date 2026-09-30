@@ -64,10 +64,12 @@ npm start -- --port 3000
 Canonical URLs, sitemap, robots, and JSON-LD `@id` values come from:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://your-domain.example
+NEXT_PUBLIC_SITE_URL=https://aonelectricals.in
 ```
 
-Copy `.env.example` and set the live domain before deploy. Do not use a domain you do not own.
+Production domains: `aonelectricals.in` (canonical) and `www.aonelectricals.in` (301 → apex).
+
+Set `NEXT_PUBLIC_SITE_URL` in Vercel production env before deploy.
 
 ## Stack
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { AreasServedLinks } from "@/components/areas-served-links";
 import { CtaPair, TextNavLink } from "@/components/cta-links";
 import { FaqList } from "@/components/faq-list";
 import { ImageSlot } from "@/components/image-slot";
@@ -21,14 +22,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { q } = await searchParams;
   const metadata = buildMetadata({
-    title: "Mixer Spare Parts in Bangalore",
+    title: "Mixer Grinder Spare Parts in Bengaluru",
     description:
-      "Mixer spare parts in Bengaluru from A One Electricals, Kumar Swamy Layout: jars, blades, couplings, carbon brushes, overload switches, and motors. Call +91 70225 16735.",
+      "Couplers, blades, jars, carbon brushes, switches and motors for popular mixer brands. Check stock and WhatsApp us. Pickup from Ilyas Nagar, Kumaraswamy Layout.",
     path: "/spares",
     keywords: [
       "mixer spare parts Bengaluru",
-      "mixer jar Kumar Swamy Layout",
+      "mixer jar Kumaraswamy Layout",
       "mixer blade Bangalore",
+      "mixer coupler Bangalore",
       "mixer motor spare",
     ],
   });
@@ -52,7 +54,7 @@ const faqs = [
   {
     question: "Can I pick up spares without a repair?",
     answer:
-      "Yes. People walk in from Kumar Swamy Layout and nearby for blades, couplings, and overload switches. Repair is next to the same counter if the spare is not the whole story.",
+      "Yes. People walk in from Kumaraswamy Layout and nearby for blades, couplings, and overload switches. Repair is next to the same counter if the spare is not the whole story.",
   },
 ];
 
@@ -83,7 +85,7 @@ export default async function SparesPage({
         data={serviceJsonLd({
           name: "Mixer and electrical spare parts in Bengaluru",
           description:
-            "Jars, blades, couplings, motors, switches, and carbon brushes from the Kumar Swamy Layout shop.",
+            "Jars, blades, couplings, motors, switches, and carbon brushes from the Kumaraswamy Layout shop.",
           path: "/spares",
         })}
       />
@@ -97,8 +99,8 @@ export default async function SparesPage({
       />
       <PageHero
         kicker="Spares · Bengaluru kitchens"
-        title="Mixer spare parts in Bengaluru — jars, blades, couplings, motors"
-        lede="The part that failed is often a small piece inside an expensive mixer. Ask the Kumar Swamy Layout shop before you replace the whole machine."
+        title="Mixer grinder spare parts – Kumaraswamy Layout, Bengaluru"
+        lede="The part that failed is often a small piece inside an expensive mixer. Ask the Kumaraswamy Layout shop before you replace the whole machine."
         image={{
           label: "Spare jars and blades",
           photo: photos.spares,
@@ -193,6 +195,7 @@ export default async function SparesPage({
           <FaqList items={faqs} />
         </div>
       </section>
+      <AreasServedLinks heading="Pick up spares from South Bengaluru" />
     </>
   );
 }

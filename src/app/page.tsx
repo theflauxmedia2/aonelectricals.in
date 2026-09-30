@@ -19,18 +19,16 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Electrician in Kumar Swamy Layout",
+  title: "Mixer Repair & Electrician in Kumaraswamy Layout",
   description:
-    "A One Electricals at 8th Cross, Ilyas Nagar, Kumar Swamy Layout, Bangalore 560111: wiring, geyser, UPS, fan, mixer, stove, pump, washer, and cooler repair. Call +91 70225 16735.",
+    "Mixer grinder repair, spares and house wiring from our Ilyas Nagar workshop, Kumaraswamy Layout. Serving JP Nagar, Jayanagar, BTM & Konanakunte. Call/WhatsApp +91 70225 16735.",
   path: "/",
   keywords: [
-    "electrician Kumar Swamy Layout",
-    "electrician Bengaluru",
-    "house wiring Kumar Swamy Layout",
-    "geyser repair Kumar Swamy Layout",
-    "UPS repair Bengaluru",
-    "ceiling fan rewind Bangalore",
-    "mixer repair Kumar Swamy Layout",
+    "mixer grinder repair Kumaraswamy Layout",
+    "electrician Kumaraswamy Layout",
+    "mixer spare parts Bengaluru",
+    "house wiring JP Nagar",
+    "mixer repair JP Nagar",
     "A One Electricals",
   ],
 });
@@ -39,7 +37,7 @@ const faqs = [
   {
     question: "Where is A One Electricals?",
     answer:
-      "The workshop is at 8th Cross, Ilyas Nagar, Kumar Swamy Layout, Bengaluru 560111. We take mixer, geyser, UPS, ceiling-fan, spare-part, and wiring calls from around the city — Jayanagar, BTM, Banashankari, Bannerghatta Road, and further when you WhatsApp the job.",
+      "The workshop is at 8th Cross, Ilyas Nagar, Kumaraswamy Layout, Bengaluru 560111. We take mixer, geyser, UPS, ceiling-fan, spare-part, and wiring calls from around the city — Jayanagar, BTM, Banashankari, Bannerghatta Road, and further when you WhatsApp the job.",
   },
   {
     question: "Do you repair mixer grinders or only sell parts?",
@@ -49,11 +47,11 @@ const faqs = [
   {
     question: "Can you wire a house or a new flat?",
     answer:
-      "Yes. Building wiring is a core service: points, boards, concealed runs in new apartments, and repairs in older independent houses around Kumar Swamy Layout.",
+      "Yes. Building wiring is a core service: points, boards, concealed runs in new apartments, and repairs in older independent houses around Kumaraswamy Layout.",
   },
   {
     question: "How do I get a job started?",
-    answer: `Call or WhatsApp ${siteConfig.phoneDisplay}. Send a photo of the mixer plate, geyser, UPS, fan, or the DB. We tell you whether to bring it to Kumar Swamy Layout or whether a visit makes sense.`,
+    answer: `Call or WhatsApp ${siteConfig.phoneDisplay}. Send a photo of the mixer plate, geyser, UPS, fan, or the DB. We tell you whether to bring it to Kumaraswamy Layout or whether a visit makes sense.`,
   },
 ];
 
@@ -66,7 +64,7 @@ const steps = [
   {
     n: "2",
     t: "We tell you what to do",
-    d: "Bring the mixer or fan to the shop in Kumar Swamy Layout, or we come for a geyser, UPS, or wiring job.",
+    d: "Bring the mixer or fan to the shop in Kumaraswamy Layout, or we come for a geyser, UPS, or wiring job.",
   },
   {
     n: "3",
@@ -82,12 +80,12 @@ export default function HomePage() {
       <section data-home className="relative isolate overflow-hidden">
         <div className="mx-auto grid max-w-6xl items-start gap-6 px-4 pb-8 pt-8 md:min-h-[calc(100dvh-5.5rem)] md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center md:gap-12 md:px-6 md:pb-10 md:pt-6 lg:gap-16">
           <div className="hero-copy relative z-20 flex min-w-0 flex-col justify-end max-md:min-h-[68dvh] max-md:pb-2 md:justify-center">
-            <p className="kicker max-md:text-white/80">Kumar Swamy Layout, Bangalore</p>
-            <h1 className="mt-3 min-w-0 font-heading text-[2.05rem] leading-[1.08] text-white sm:text-4xl md:mt-4 md:max-w-[12ch] md:text-[3.35rem] md:leading-[1.02] md:text-foreground lg:text-[3.85rem]">
-              <span className="hero-line">Electrical repair </span>
-              <span className="hero-line">and installation </span>
-              <span className="hero-line">in Kumar Swamy </span>
-              <span className="hero-line">Layout.</span>
+            <p className="kicker max-md:text-white/80">Kumaraswamy Layout, Bangalore</p>
+            <h1 className="mt-3 min-w-0 font-heading text-[2.05rem] leading-[1.08] text-white sm:text-4xl md:mt-4 md:text-[2.45rem] md:leading-[1.06] md:text-foreground lg:text-[3.05rem]">
+              <span className="hero-line">Mixer grinder repair, </span>
+              <span className="hero-line">spares &amp; house wiring </span>
+              <span className="hero-line">in Kumaraswamy Layout, </span>
+              <span className="hero-line">Bengaluru.</span>
               <span className="hero-rule" aria-hidden="true" />
             </h1>
             <p className="mt-4 max-w-lg text-[0.98rem] leading-relaxed text-white/80 md:mt-5 md:text-[1.05rem] md:text-muted-foreground">
@@ -123,7 +121,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-24">
         <h2 className="rise-in max-w-3xl font-heading text-[1.85rem] leading-[1.12] md:text-5xl">
-          House wiring, repairs, and installation from our Bangalore shop in Kumar Swamy Layout.
+          House wiring, repairs, and installation from our Bangalore shop in Kumaraswamy Layout.
         </h2>
         <ul className="mt-10 space-y-12 md:mt-20 md:space-y-24">
           {featuredServices.map((service, index) => (
@@ -165,7 +163,7 @@ export default function HomePage() {
       <section className="border-y border-border bg-secondary">
         <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-20">
           <h2 className="rise-in max-w-3xl font-heading text-[1.85rem] leading-[1.12] md:text-4xl">
-            Geyser, UPS, ceiling fan, washing machine, and gas stove work from the same Kumar Swamy Layout number.
+            Geyser, UPS, ceiling fan, washing machine, and gas stove work from the same Kumaraswamy Layout number.
           </h2>
           <ul className="mt-8 grid gap-5 md:grid-cols-3 md:gap-6">
             {extraServices.map((service) => (
@@ -227,23 +225,23 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-2 md:gap-12 md:py-20">
           <ImageSlot
             className="media-zoom"
-            label="Kumar Swamy Layout workshop / shopfront"
+            label="Kumaraswamy Layout workshop / shopfront"
             photo={photos.city}
             ratio="landscape"
             sizes="(max-width: 768px) 92vw, 50vw"
           />
           <div>
             <h2 className="font-heading text-[1.85rem] leading-tight md:text-4xl">
-              A Kumar Swamy Layout shop that still takes calls from across the city
+              A Kumaraswamy Layout shop that still takes calls from across the city
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">
-              Most jobs are nearby: Kumar Swamy Layout, Jayanagar, and BTM. Geysers, UPS units, ceiling fans, and mixers all use the same phone number. The shop is in Kumar Swamy Layout, and we also take calls from the rest of the city.
+              Most jobs are nearby: Kumaraswamy Layout, Jayanagar, and BTM. Geysers, UPS units, ceiling fans, and mixers all use the same phone number. The shop is in Kumaraswamy Layout, and we also take calls from the rest of the city.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
               Read the neighborhood page for{" "}
-              <TextNavLink href="/kumar-swamy-layout">electrical work in Kumar Swamy Layout</TextNavLink> or the
-              city page for{" "}
-              <TextNavLink href="/bengaluru">electrical work across Bengaluru</TextNavLink>
+              <TextNavLink href="/areas/kumaraswamy-layout">electrical work in Kumaraswamy Layout</TextNavLink> or the
+              areas hub for{" "}
+              <TextNavLink href="/areas">electrical work across South Bengaluru</TextNavLink>
               .
             </p>
           </div>
@@ -272,7 +270,7 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-12 md:flex-row md:items-end md:justify-between md:gap-8 md:py-16">
           <div className="max-w-xl">
             <h2 className="font-heading text-[1.85rem] leading-tight md:text-4xl">
-              Call the shop in Kumar Swamy Layout. Wiring, repair, or installation starts there.
+              Call the shop in Kumaraswamy Layout. Wiring, repair, or installation starts there.
             </h2>
           </div>
           <CtaPair tone="onDark" />

@@ -549,6 +549,47 @@ details[open] .faq-mark {
   top: 1rem;
 }
 
+/* In-content and chrome text links use brand primary — never default browser blue */
+a:not([class*="button"]):not([class*="bg-primary"]):not([class*="bg-\\["]):not(.pressable) {
+  color: var(--primary);
+}
+
+a:not([class*="button"]):not([class*="bg-primary"]):not(.pressable):visited {
+  color: var(--primary);
+}
+
+a:not([class*="button"]):not([class*="bg-primary"]):not(.pressable):hover {
+  color: color-mix(in oklch, var(--primary) 85%, transparent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.prose a,
+[data-content] a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.text-link {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.text-link:visited {
+  color: var(--primary);
+}
+
+.text-link:hover {
+  color: color-mix(in oklch, var(--primary) 85%, transparent);
+}
+
 .service-prompt {
   position: fixed;
   inset: 0;

@@ -9,9 +9,9 @@ import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About A One Electricals",
+  title: "About A One Electricals – Ilyas Nagar Workshop",
   description:
-    "About A One Electricals in Kumar Swamy Layout, Bengaluru: mixer repair, building wiring, geyser, UPS, ceiling fan, and spares. Call +91 70225 16735.",
+    "About A One Electricals in Kumaraswamy Layout, Bengaluru: mixer repair, building wiring, geyser, UPS, ceiling fan, and spares. Call +91 70225 16735.",
   path: "/about",
 });
 
@@ -31,9 +31,9 @@ export default function AboutPage() {
         ]}
       />
       <PageHero
-        kicker="Workshop · Kumar Swamy Layout"
-        title="The Kumar Swamy Layout workshop behind A One Electricals"
-        lede="A Kumar Swamy Layout electrical shop that still answers the phone: wiring, repair, and installation."
+        kicker="Workshop · Kumaraswamy Layout"
+        title="About our Kumaraswamy Layout workshop"
+        lede="A Kumaraswamy Layout electrical shop that still answers the phone: wiring, repair, and installation."
         image={{
           label: "Workshop interior",
           photo: photos.workshop,
@@ -48,7 +48,7 @@ export default function AboutPage() {
           What we actually do
         </h2>
         <p>
-          {siteConfig.name} works out of Kumar Swamy Layout, Bengaluru. The public work is{" "}
+          {siteConfig.name} works out of Kumaraswamy Layout, Bengaluru. The public work is{" "}
           <TextNavLink href="/building-wiring">building wiring</TextNavLink>,{" "}
           <TextNavLink href="/geyser-repair">geyser repair and installation</TextNavLink>
           , <TextNavLink href="/ups-repair">UPS work</TextNavLink>,{" "}
@@ -67,13 +67,13 @@ export default function AboutPage() {
         <p>
           The photos are from the shop: repair work, switchboards, and ceiling
           points. Mixer photos show the machines we repair. The words stay local:
-          Kumar Swamy Layout kitchens and South Bengaluru flats, because that is who
+          Kumaraswamy Layout kitchens and South Bengaluru flats, because that is who
           calls.
         </p>
         <p>
           If you need the neighborhood angle, open{" "}
-          <TextNavLink href="/kumar-swamy-layout">Kumar Swamy Layout</TextNavLink>. If you are elsewhere in
-          the city, open <TextNavLink href="/bengaluru">Bengaluru</TextNavLink>. To
+          <TextNavLink href="/areas/kumaraswamy-layout">Kumaraswamy Layout</TextNavLink>. If you are elsewhere in
+          South Bengaluru, open <TextNavLink href="/areas">areas we serve</TextNavLink>. To
           start a job, go to <TextNavLink href="/contact">contact</TextNavLink>.
         </p>
       </article>

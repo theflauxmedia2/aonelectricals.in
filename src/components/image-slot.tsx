@@ -14,6 +14,7 @@ export type ImageSlotProps = {
   caption?: string;
   ratio?: keyof typeof ratios;
   src?: string;
+  /** Prefer an explicit alt; falls back to photo.alt, then label. */
   alt?: string;
   photo?: Photo;
   priority?: boolean;
@@ -38,7 +39,7 @@ export function ImageSlot({
   quality,
 }: ImageSlotProps) {
   const imageSrc = photo?.src ?? src;
-  const imageAlt = photo?.alt ?? alt ?? label;
+  const imageAlt = alt ?? photo?.alt ?? label;
   const objectPosition = photo?.position ?? "50% 50%";
 
   return (

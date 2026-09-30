@@ -1,21 +1,33 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+const CANONICAL_HOST = "aonelectricals.in";
+
 export function proxy(request: NextRequest) {
   const site = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
-  if (!site) return NextResponse.next();
+  let canonical: URL | null = null;
 
-  let canonical: URL;
-  try {
-    canonical = new URL(site);
-  } catch {
+  if (site) {
+    try {
+      canonical = new URL(site);
+    } catch {
+      canonical = null;
+    }
+  }
+
+  if (!canonical || canonical.hostname.endsWith(".vercel.app")) {
+    canonical = new URL(`https://${CANONICAL_HOST}`);
+  }
+
+  const host = request.headers.get("host")?.split(":")[0]?.toLowerCase();
+  if (!host || host === canonical.hostname) {
     return NextResponse.next();
   }
 
-  if (canonical.hostname.endsWith(".vercel.app")) return NextResponse.next();
+  const shouldRedirect =
+    host === `www.${canonical.hostname}` || host.endsWith(".vercel.app");
 
-  const host = request.headers.get("host")?.split(":")[0];
-  if (!host?.endsWith(".vercel.app") || host === canonical.hostname) {
+  if (!shouldRedirect) {
     return NextResponse.next();
   }
 

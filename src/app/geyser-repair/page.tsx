@@ -7,15 +7,15 @@ import { services, siteConfig } from "@/lib/site";
 const service = services.find((item) => item.slug === "geyser-repair")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Geyser Repair in Kumar Swamy Layout",
+  title: "Geyser Repair in Kumaraswamy Layout",
   description:
-    "Geyser repair and installation in Kumar Swamy Layout, Bengaluru. Leaking tanks, no hot water, new 2BHK fits. Call A One Electricals at +91 70225 16735.",
+    "Geyser repair and installation in Kumaraswamy Layout, Bengaluru. Leaking tanks, no hot water, new 2BHK fits. Call A One Electricals at +91 70225 16735.",
   path: service.href,
   keywords: [
-    "geyser repair Kumar Swamy Layout",
+    "geyser repair Kumaraswamy Layout",
     "geyser installation Bengaluru",
     "water heater repair Bangalore",
-    "geyzer repair Kumar Swamy Layout",
+    "geyzer repair Kumaraswamy Layout",
     "geyser repair Ilyas Nagar",
   ],
 });
@@ -32,8 +32,8 @@ const faqs = [
       "Yes. That is often earthing, a failed thermostat, or a point that was never meant for a geyser load. WhatsApp a photo of the geyser and the DB. We tell you if it is a repair or a wiring job.",
   },
   {
-    question: "Do I bring the geyser to Kumar Swamy Layout?",
-    answer: `Usually we come to you. Storage geysers stay on the wall. Call ${siteConfig.phoneDisplay} with your area — Kumar Swamy Layout, Jayanagar, BTM — and a photo of the leak or the error light.`,
+    question: "Do I bring the geyser to Kumaraswamy Layout?",
+    answer: `Usually we come to you. Storage geysers stay on the wall. Call ${siteConfig.phoneDisplay} with your area — Kumaraswamy Layout, Jayanagar, BTM — and a photo of the leak or the error light.`,
   },
 ];
 
@@ -41,20 +41,20 @@ export default function GeyserRepairPage() {
   return (
     <ServiceStory
       service={service}
-      kicker="Hot water · Kumar Swamy Layout"
-      title="Geyser repair and installation in Kumar Swamy Layout, Bengaluru"
+      kicker="Hot water · Kumaraswamy Layout"
+      title="Geyser repair and installation in Kumaraswamy Layout, Bengaluru"
       lede="No hot water before the 7 a.m. bath, a tank weeping down the tiles, or a new flat that still needs a geyser hung — A One Electricals repairs and installs from 8th Cross, Ilyas Nagar."
       ctaMessage="Hi A One Electricals, I need geyser repair or installation in Bengaluru."
       faqs={faqs}
-      jsonLdName="Geyser repair and installation in Kumar Swamy Layout, Bengaluru"
+      jsonLdName="Geyser repair and installation in Kumaraswamy Layout, Bengaluru"
       jsonLdDescription="Geyser repair, element and thermostat work, and new geyser installation for Bengaluru homes."
     >
       <h2 className="font-heading text-[1.75rem] font-semibold text-foreground md:text-3xl">
-        Why Kumar Swamy Layout geysers fail — and what we fix
+        Why Kumaraswamy Layout geysers fail — and what we fix
       </h2>
       <p>
         Bengaluru hard water eats elements. A thermostat sticks. A tank pinholes after
-        a few monsoons. Then someone searches “geyser repair near me” from Kumar Swamy Layout or
+        a few monsoons. Then someone searches “geyser repair near me” from Kumaraswamy Layout or
         “geyser installation Bangalore” for a house that never got one fitted.
       </p>
       <p>

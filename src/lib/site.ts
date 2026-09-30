@@ -4,11 +4,11 @@ export const siteConfig = {
   locale: "en_IN",
   language: "en-IN",
   city: "Bengaluru",
-  neighborhood: "Kumar Swamy Layout",
+  neighborhood: "Kumaraswamy Layout",
   locality: "Ilyas Nagar",
   street: "8th Cross, Ilyas Nagar",
   postalCode: "560111",
-  addressDisplay: "8th Cross, Ilyas Nagar, Kumar Swamy Layout, Bengaluru 560111",
+  addressDisplay: "8th Cross, Ilyas Nagar, Kumaraswamy Layout, Bengaluru 560111",
   latitude: 12.898519893182634,
   longitude: 77.58882758709476,
   mapsUrl:
@@ -25,12 +25,29 @@ export const siteConfig = {
   socialHandle: "a_one_electricals_",
   instagram: "https://www.instagram.com/a_one_electricals_",
   hoursDisplay: "Open all day, every day",
-  tagline: "Electrical repair and installation from Kumar Swamy Layout.",
+  tagline: "Electrical repair and installation from Kumaraswamy Layout.",
+  priceRange: "₹₹",
 } as const;
 
 export function getSiteUrl() {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
-  if (fromEnv) return fromEnv;
+  if (fromEnv) {
+    if (process.env.VERCEL_ENV === "production" && fromEnv.includes("example")) {
+      throw new Error(
+        "Set NEXT_PUBLIC_SITE_URL to https://aonelectricals.in for production."
+      );
+    }
+    try {
+      const host = new URL(fromEnv).hostname;
+      if (!host.endsWith(".vercel.app")) return fromEnv;
+    } catch {
+      /* fall through */
+    }
+  }
+
+  if (process.env.VERCEL_ENV === "production") {
+    return "https://aonelectricals.in";
+  }
 
   const vercelHost =
     process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
@@ -42,6 +59,9 @@ export function getSiteUrl() {
 
   return "http://127.0.0.1:3000";
 }
+
+/** Canonical site origin used in metadata, sitemap, robots, and JSON-LD. */
+export const SITE_URL = getSiteUrl();
 
 export function isIndexableHost(url = getSiteUrl()) {
   try {
@@ -60,8 +80,8 @@ export const navItems = [
   { href: "/services", label: "Services" },
   { href: "/building-wiring", label: "Building wiring" },
   { href: "/spares", label: "Spares" },
-  { href: "/kumar-swamy-layout", label: "Kumar Swamy Layout" },
-  { href: "/bengaluru", label: "Bengaluru" },
+  { href: "/areas", label: "Areas" },
+  { href: "/areas/kumaraswamy-layout", label: "Kumaraswamy Layout" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -73,10 +93,10 @@ export const services = [
     kicker: "01",
     title: "Building wiring",
     navLabel: "Building wiring",
-    searchTitle: "House and building wiring in Kumar Swamy Layout, Bengaluru",
+    searchTitle: "House and building wiring in Kumaraswamy Layout, Bengaluru",
     blurb:
-      "New flats, old independent houses, and shop boards around Kumar Swamy Layout — points, DBs, and earthing that hold when the monsoon hits.",
-    intent: "house wiring Kumar Swamy Layout, building wiring Bengaluru, electrician",
+      "New flats, old independent houses, and shop boards around Kumaraswamy Layout — points, DBs, and earthing that hold when the monsoon hits.",
+    intent: "house wiring Kumaraswamy Layout, building wiring Bengaluru, electrician",
     image: "House wiring / distribution board",
     photo: "buildingWiring",
     cardPhoto: "buildingWiring",
@@ -88,12 +108,12 @@ export const services = [
     kicker: "02",
     title: "Mixer manufacturing & repair",
     navLabel: "Mixer repair",
-    searchTitle: "Mixer grinder repair and manufacturing in Kumar Swamy Layout, Bengaluru",
+    searchTitle: "Mixer grinder repair and manufacturing in Kumaraswamy Layout, Bengaluru",
     blurb:
-      "Jar couplings, burnt motors, and noisy wet grinders from Kumar Swamy Layout kitchens. We repair them in the shop, not by guessing on a phone call.",
+      "Jar couplings, burnt motors, and noisy wet grinders from Kumaraswamy Layout kitchens. We repair them in the shop, not by guessing on a phone call.",
     intent:
-      "mixer grinder repair Kumar Swamy Layout, mixer manufacturing Bengaluru, mixer motor rewind",
-    image: "Mixer at the Kumar Swamy Layout shop",
+      "mixer grinder repair Kumaraswamy Layout, mixer manufacturing Bengaluru, mixer motor rewind",
+    image: "Mixer at the Kumaraswamy Layout shop",
     photo: "mixer",
     cardPhoto: "mixer",
     featured: true,
@@ -107,7 +127,7 @@ export const services = [
     searchTitle: "Mixer spare parts in Bengaluru — jars, blades, motors",
     blurb:
       "Blades, jars, carbon brushes, overload switches, and the small parts that keep a mixer in daily masala work.",
-    intent: "mixer spare parts Bengaluru, mixer jar blade Kumar Swamy Layout",
+    intent: "mixer spare parts Bengaluru, mixer jar blade Kumaraswamy Layout",
     image: "Jars, blades, and spare parts",
     photo: "spares",
     cardPhoto: "sparesWide",
@@ -119,11 +139,11 @@ export const services = [
     kicker: "04",
     title: "Geyser repair & installation",
     navLabel: "Geyser",
-    searchTitle: "Geyser repair and installation in Kumar Swamy Layout, Bengaluru",
+    searchTitle: "Geyser repair and installation in Kumaraswamy Layout, Bengaluru",
     blurb:
       "No hot water, a leaking tank, or a new 2BHK that still needs a geyser on the wall — we repair and install from Ilyas Nagar.",
     intent:
-      "geyser repair Kumar Swamy Layout, geyser installation Bengaluru, water heater repair Bangalore",
+      "geyser repair Kumaraswamy Layout, geyser installation Bengaluru, water heater repair Bangalore",
     image: "Storage geyser on a bathroom wall",
     photo: "geyser",
     cardPhoto: "geyserWide",
@@ -135,11 +155,11 @@ export const services = [
     kicker: "05",
     title: "UPS repair & installation",
     navLabel: "UPS",
-    searchTitle: "UPS repair and installation in Kumar Swamy Layout, Bengaluru",
+    searchTitle: "UPS repair and installation in Kumaraswamy Layout, Bengaluru",
     blurb:
-      "An inverter that will not hold charge, a battery that swells, or a new UPS for the Wi-Fi and lights. We open it at the Kumar Swamy Layout shop.",
+      "An inverter that will not hold charge, a battery that swells, or a new UPS for the Wi-Fi and lights. We open it at the Kumaraswamy Layout shop.",
     intent:
-      "UPS repair Kumar Swamy Layout, UPS installation Bengaluru, inverter repair Bangalore",
+      "UPS repair Kumaraswamy Layout, UPS installation Bengaluru, inverter repair Bangalore",
     image: "UPS opened at the shop",
     photo: "ups",
     cardPhoto: "upsWide",
@@ -151,11 +171,11 @@ export const services = [
     kicker: "06",
     title: "Ceiling fan rewind & installation",
     navLabel: "Ceiling fan",
-    searchTitle: "Ceiling fan rewind and installation in Kumar Swamy Layout, Bengaluru",
+    searchTitle: "Ceiling fan rewind and installation in Kumaraswamy Layout, Bengaluru",
     blurb:
       "A fan that hums, sparks, or will not start. We repair the motor in the shop, then fit it back so the room has air again.",
     intent:
-      "ceiling fan rewind Kumar Swamy Layout, ceiling fan installation Bengaluru, fan motor rewind Bangalore",
+      "ceiling fan rewind Kumaraswamy Layout, ceiling fan installation Bengaluru, fan motor rewind Bangalore",
     image: "Ceiling fan being wired on a Bengaluru ceiling",
     photo: "fanInstall",
     cardPhoto: "fanRewind",
@@ -171,18 +191,18 @@ export const addedServices = [
     slug: "ups-wiring",
     href: "/ups-wiring",
     navLabel: "UPS wiring",
-    searchTitle: "UPS wiring in Kumar Swamy Layout",
-    metaTitle: "UPS Wiring in Kumar Swamy Layout",
+    searchTitle: "UPS wiring in Kumaraswamy Layout",
+    metaTitle: "UPS Wiring in Kumaraswamy Layout",
     blurb:
       "New inverter points, changeover wiring, and the cable run from the battery cupboard to the lights — planned before the next power cut.",
     image: "Home UPS and inverter wiring",
     photo: "upsWiring",
-    kicker: "Inverter wiring · Kumar Swamy Layout",
-    lede: "A UPS that is bought and still not wired, or an old changeover that trips the whole flat — A One Electricals runs the wiring from Kumar Swamy Layout.",
+    kicker: "Inverter wiring · Kumaraswamy Layout",
+    lede: "A UPS that is bought and still not wired, or an old changeover that trips the whole flat — A One Electricals runs the wiring from Kumaraswamy Layout.",
     description:
-      "UPS and inverter wiring in Kumar Swamy Layout, Bengaluru. Changeover, battery cupboard, and light points. Call A One Electricals at +91 70225 16735.",
+      "UPS and inverter wiring in Kumaraswamy Layout, Bengaluru. Changeover, battery cupboard, and light points. Call A One Electricals at +91 70225 16735.",
     keywords: [
-      "UPS wiring Kumar Swamy Layout",
+      "UPS wiring Kumaraswamy Layout",
       "inverter wiring Bengaluru",
       "home UPS installation Bangalore",
     ],
@@ -209,18 +229,18 @@ export const addedServices = [
     slug: "gas-stove",
     href: "/gas-stove",
     navLabel: "Gas stove service",
-    searchTitle: "Gas stove service in Kumar Swamy Layout",
-    metaTitle: "Gas Stove Service, Kumar Swamy Layout",
+    searchTitle: "Gas stove service in Kumaraswamy Layout",
+    metaTitle: "Gas Stove Service, Kumaraswamy Layout",
     blurb:
       "Burners that will not hold a flame, a jammed knob, or a stove that needs a proper service before the next cooking rush.",
     image: "Gas stove service",
     photo: "gasStove",
-    kicker: "Stove service · Kumar Swamy Layout",
-    lede: "A burner that lights and dies, a knob that spins free, or a stove that has not been opened in years — A One Electricals services gas stoves from Kumar Swamy Layout.",
+    kicker: "Stove service · Kumaraswamy Layout",
+    lede: "A burner that lights and dies, a knob that spins free, or a stove that has not been opened in years — A One Electricals services gas stoves from Kumaraswamy Layout.",
     description:
-      "Gas stove service in Kumar Swamy Layout, Bengaluru. Burners, knobs, and ignition. Call A One Electricals at +91 70225 16735.",
+      "Gas stove service in Kumaraswamy Layout, Bengaluru. Burners, knobs, and ignition. Call A One Electricals at +91 70225 16735.",
     keywords: [
-      "gas stove service Kumar Swamy Layout",
+      "gas stove service Kumaraswamy Layout",
       "gas stove repair Bengaluru",
       "burner not working Bangalore",
     ],
@@ -228,7 +248,7 @@ export const addedServices = [
     paragraphs: [
       "Most stove calls are not a new stove. They are a blocked burner, a tired ignition, or a knob that no longer lines up with the gas.",
       "Send a photo of the stove and say which burner failed. We tell you if we should visit, or if a part has to come to the shop.",
-      "A glass top and a stainless two-burner fail differently. The glass top usually needs the ignition or the knob looked at in place. A small stove can come to Kumar Swamy Layout if you can carry it.",
+      "A glass top and a stainless two-burner fail differently. The glass top usually needs the ignition or the knob looked at in place. A small stove can come to Kumaraswamy Layout if you can carry it.",
     ],
     faqs: [
       {
@@ -247,18 +267,18 @@ export const addedServices = [
     slug: "water-pump",
     href: "/water-pump",
     navLabel: "Water pump repair",
-    searchTitle: "Water pump repair in Kumar Swamy Layout",
-    metaTitle: "Water Pump Repair, Kumar Swamy Layout",
+    searchTitle: "Water pump repair in Kumaraswamy Layout",
+    metaTitle: "Water Pump Repair, Kumaraswamy Layout",
     blurb:
       "A pump that hums and does not lift, a starter that trips, or a motor that needs opening before the overhead tank runs dry.",
     image: "Water pump motor repair",
     photo: "waterPump",
-    kicker: "Water pump · Kumar Swamy Layout",
-    lede: "The sump pump that only hums, or the starter that trips when the tank is filling — A One Electricals repairs water pumps from Kumar Swamy Layout.",
+    kicker: "Water pump · Kumaraswamy Layout",
+    lede: "The sump pump that only hums, or the starter that trips when the tank is filling — A One Electricals repairs water pumps from Kumaraswamy Layout.",
     description:
-      "Water pump repair in Kumar Swamy Layout, Bengaluru. Motors, starters, and pumps that will not lift. Call A One Electricals at +91 70225 16735.",
+      "Water pump repair in Kumaraswamy Layout, Bengaluru. Motors, starters, and pumps that will not lift. Call A One Electricals at +91 70225 16735.",
     keywords: [
-      "water pump repair Kumar Swamy Layout",
+      "water pump repair Kumaraswamy Layout",
       "motor pump repair Bengaluru",
       "sump pump not working Bangalore",
     ],
@@ -285,18 +305,18 @@ export const addedServices = [
     slug: "washing-machine",
     href: "/washing-machine",
     navLabel: "Washing machine repair",
-    searchTitle: "Washing machine repair in Kumar Swamy Layout",
-    metaTitle: "Washer Repair in Kumar Swamy Layout",
+    searchTitle: "Washing machine repair in Kumaraswamy Layout",
+    metaTitle: "Washer Repair in Kumaraswamy Layout",
     blurb:
       "A machine that will not spin, a door that stays locked, or a motor that smells hot after one load.",
     image: "Washing machine repair",
     photo: "washer",
-    kicker: "Washer · Kumar Swamy Layout",
-    lede: "A wash that stops mid-cycle, a drum that will not spin, or a machine that trips the point — A One Electricals repairs washing machines from Kumar Swamy Layout.",
+    kicker: "Washer · Kumaraswamy Layout",
+    lede: "A wash that stops mid-cycle, a drum that will not spin, or a machine that trips the point — A One Electricals repairs washing machines from Kumaraswamy Layout.",
     description:
-      "Washing machine repair in Kumar Swamy Layout, Bengaluru. Spin, motor, and power faults. Call A One Electricals at +91 70225 16735.",
+      "Washing machine repair in Kumaraswamy Layout, Bengaluru. Spin, motor, and power faults. Call A One Electricals at +91 70225 16735.",
     keywords: [
-      "washing machine repair Kumar Swamy Layout",
+      "washing machine repair Kumaraswamy Layout",
       "washing machine service Bengaluru",
       "washer not spinning Bangalore",
     ],
@@ -310,7 +330,7 @@ export const addedServices = [
       {
         question: "Do you come home for a washing machine?",
         answer:
-          "Yes, when the machine cannot travel. Call with your area. If it is a small fault you can unplug, we may still ask you to bring it to Kumar Swamy Layout.",
+          "Yes, when the machine cannot travel. Call with your area. If it is a small fault you can unplug, we may still ask you to bring it to Kumaraswamy Layout.",
       },
       {
         question: "The point trips only when the machine starts. Is that the washer?",
@@ -323,18 +343,18 @@ export const addedServices = [
     slug: "air-cooler",
     href: "/air-cooler",
     navLabel: "Air cooler repair",
-    searchTitle: "Air cooler repair in Kumar Swamy Layout",
-    metaTitle: "Air Cooler Repair, Kumar Swamy Layout",
+    searchTitle: "Air cooler repair in Kumaraswamy Layout",
+    metaTitle: "Air Cooler Repair, Kumaraswamy Layout",
     blurb:
       "A cooler that will not swing, a pump that stays dry, or a fan motor that hums through summer.",
     image: "Air cooler repair",
     photo: "fanRewind",
-    kicker: "Air cooler · Kumar Swamy Layout",
-    lede: "A desert cooler with a dead pump, a fan that only hums, or pads that never get wet — A One Electricals repairs air coolers from Kumar Swamy Layout.",
+    kicker: "Air cooler · Kumaraswamy Layout",
+    lede: "A desert cooler with a dead pump, a fan that only hums, or pads that never get wet — A One Electricals repairs air coolers from Kumaraswamy Layout.",
     description:
-      "Air cooler repair in Kumar Swamy Layout, Bengaluru. Fan motors, pumps, and swing. Call A One Electricals at +91 70225 16735.",
+      "Air cooler repair in Kumaraswamy Layout, Bengaluru. Fan motors, pumps, and swing. Call A One Electricals at +91 70225 16735.",
     keywords: [
-      "air cooler repair Kumar Swamy Layout",
+      "air cooler repair Kumaraswamy Layout",
       "cooler service Bengaluru",
       "desert cooler not working Bangalore",
     ],
@@ -342,7 +362,7 @@ export const addedServices = [
     paragraphs: [
       "Summer coolers fail in three places: the fan motor, the water pump, and the swing. A cooler that blows hot air with a full tank is usually the pump, not the fan.",
       "Bring a small cooler to the shop, or WhatsApp a photo if it is a tall cooler that has to stay in the room. Same number as the fan and mixer work.",
-      "Before peak summer in Bangalore the queue is the pump and the swing, not a new cooler. If the fan only hums, that is motor work of the same kind as a ceiling fan, and it can be done at the Kumar Swamy Layout shop.",
+      "Before peak summer in Bangalore the queue is the pump and the swing, not a new cooler. If the fan only hums, that is motor work of the same kind as a ceiling fan, and it can be done at the Kumaraswamy Layout shop.",
     ],
     faqs: [
       {
@@ -351,7 +371,7 @@ export const addedServices = [
           "Both. A humming fan is motor work, close to the ceiling-fan rewind we already do. A silent pump is a separate part.",
       },
       {
-        question: "Can I bring the cooler to Kumar Swamy Layout?",
+        question: "Can I bring the cooler to Kumaraswamy Layout?",
         answer:
           "Yes, if you can move it. Call first so we are free. Large coolers need a visit.",
       },
@@ -377,13 +397,14 @@ export const menuServices = [
 ];
 
 export const coverageAreas = [
-  { name: "Kumar Swamy Layout", href: "/kumar-swamy-layout" },
-  { name: "Banashankari", href: "/banashankari" },
-  { name: "Jayanagar", href: "/jayanagar" },
-  { name: "BTM Layout", href: "/btm-layout" },
-  { name: "Bannerghatta Road", href: "/bannerghatta-road" },
-  { name: "South Bengaluru", href: "/bengaluru" },
-  { name: "Bengaluru", href: "/bengaluru" },
+  { name: "Kumaraswamy Layout", href: "/areas/kumaraswamy-layout" },
+  { name: "JP Nagar", href: "/areas/jp-nagar" },
+  { name: "Jayanagar", href: "/areas/jayanagar" },
+  { name: "BTM Layout", href: "/areas/btm-layout" },
+  { name: "Konanakunte Cross", href: "/areas/konanakunte-cross" },
+  { name: "Banashankari", href: "/areas/banashankari" },
+  { name: "Bannerghatta Road", href: "/areas/bannerghatta-road" },
+  { name: "South Bengaluru", href: "/areas" },
 ] as const;
 
 export const areasServed = coverageAreas.map((area) => area.name);
@@ -411,7 +432,7 @@ export const spareCatalog = [
     slug: "motors",
     name: "Motors & rewind",
     summary:
-      "Burnt coils, stuck bearings, and motors that trip after wet grinding. We open the motor at the Kumar Swamy Layout shop.",
+      "Burnt coils, stuck bearings, and motors that trip after wet grinding. We open the motor at the Kumaraswamy Layout shop.",
   },
   {
     slug: "switches",

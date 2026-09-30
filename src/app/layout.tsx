@@ -6,7 +6,7 @@ import { LeadDock } from "@/components/lead-dock";
 import { ServicePrompt } from "@/components/service-prompt";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
-import { localBusinessJsonLd, websiteJsonLd } from "@/lib/seo";
+import { localBusinessJsonLd } from "@/lib/seo";
 import { getSiteUrl, isIndexableHost, siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -27,11 +27,11 @@ const themeInit = `(function(){try{document.documentElement.classList.toggle("da
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "Electrician in Kumar Swamy Layout | A One Electricals",
+    default: "Mixer Repair & Electrician in Kumaraswamy Layout | A One",
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "A One Electricals in Kumar Swamy Layout, Bangalore: house wiring, geyser, UPS, ceiling fan, mixer repair, and spare parts. Call or WhatsApp +91 70225 16735.",
+    "Mixer grinder repair, spares and house wiring from our Ilyas Nagar workshop, Kumaraswamy Layout. Serving JP Nagar, Jayanagar, BTM & Konanakunte. Call/WhatsApp +91 70225 16735.",
   applicationName: siteConfig.name,
   category: "Electrical services",
   authors: [{ name: siteConfig.name }],
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     : { index: false, follow: false },
   other: {
     "geo.region": "IN-KA",
-    "geo.placename": "Ilyas Nagar, Kumar Swamy Layout, Bengaluru",
+    "geo.placename": "Ilyas Nagar, Kumaraswamy Layout, Bengaluru",
     "geo.postalcode": "560111",
     "geo.position": `${siteConfig.latitude};${siteConfig.longitude}`,
     ICBM: `${siteConfig.latitude}, ${siteConfig.longitude}`,
@@ -83,7 +83,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {themeInit}
         </Script>
         <JsonLd data={localBusinessJsonLd()} />
-        <JsonLd data={websiteJsonLd()} />
         <a className="skip-link" href="#main">
           Skip to content
         </a>

@@ -13,13 +13,24 @@ export default function NotFound() {
       <p className="kicker">404</p>
       <h1 className="mt-4 font-heading text-4xl">This page is not here</h1>
       <p className="mt-4 text-muted-foreground">
-        That link is not a page. Services, Kumar Swamy Layout, and contact are on the site. You can also call the shop.
+        That link is not a page. Try one of these, or call the shop.
       </p>
-      <p className="mt-6">
-        <Link href="/" className="text-primary underline-offset-4 hover:underline">
-          Back to A One Electricals home
-        </Link>
-      </p>
+      <ul className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+        {[
+          { href: "/", label: "Home" },
+          { href: "/services", label: "All services" },
+          { href: "/mixer-repair", label: "Mixer repair" },
+          { href: "/building-wiring", label: "Building wiring" },
+          { href: "/areas", label: "Areas we serve" },
+          { href: "/contact", label: "Contact" },
+        ].map((item) => (
+          <li key={item.href}>
+            <Link href={item.href} className="text-primary underline underline-offset-4">
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
       <div className="mt-8 flex justify-center">
         <CtaPair />
       </div>

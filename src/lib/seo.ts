@@ -7,6 +7,7 @@ import {
   siteConfig,
   services,
 } from "@/lib/site";
+import { primaryAreas } from "@/lib/areas";
 
 type BuildMetaInput = {
   title: string;
@@ -23,16 +24,19 @@ export function buildMetadata({
 }: BuildMetaInput): Metadata {
   const url = `${getSiteUrl()}${path === "/" ? "" : path}`;
   const brand = ` | ${siteConfig.name}`;
+  const shortBrand = ` | ${siteConfig.shortName}`;
   const fullTitle = title.includes(siteConfig.name)
     ? title
     : title.length + brand.length <= 60
       ? `${title}${brand}`
-      : title;
+      : title.length + shortBrand.length <= 60
+        ? `${title}${shortBrand}`
+        : title;
   const shareImage = {
     url: "/opengraph-image",
     width: 1200,
     height: 630,
-    alt: `${siteConfig.name}, electrician in Kumar Swamy Layout, Bengaluru`,
+    alt: `${siteConfig.name}, electrician in Kumaraswamy Layout, Bengaluru`,
   };
 
   return {
@@ -77,69 +81,98 @@ export function localBusinessJsonLd() {
   const url = getSiteUrl();
   return {
     "@context": "https://schema.org",
-    "@type": "Electrician",
-    "@id": `${url}/#business`,
-    name: siteConfig.name,
-    url,
-    telephone: siteConfig.phoneTel,
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      opens: "00:00",
-      closes: "23:59",
-    },
-    image: [
-      `${url}/images/hero-desktop-brand.jpg`,
-      `${url}/opengraph-image`,
-    ],
-    logo: `${url}/brand/logo.png`,
-    hasMap: siteConfig.mapsUrl,
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: siteConfig.phoneTel,
-      contactType: "customer service",
-      areaServed: "IN",
-      availableLanguage: "English",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: siteConfig.latitude,
-      longitude: siteConfig.longitude,
-    },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: `${siteConfig.street}, ${siteConfig.neighborhood}`,
-      addressLocality: siteConfig.city,
-      addressRegion: siteConfig.region,
-      postalCode: siteConfig.postalCode,
-      addressCountry: siteConfig.country,
-    },
-    areaServed: areasServed.map((name) => ({
-      "@type": name === "Bengaluru" ? "City" : "Place",
-      name,
-    })),
-    sameAs: [siteConfig.instagram],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Electrical services in Bengaluru",
-      itemListElement: [...services, ...addedServices].map((service) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: service.searchTitle,
-          areaServed: "Bengaluru",
-          url: `${url}${service.href}`,
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${url}/#website`,
+        url: `${url}/`,
+        name: siteConfig.name,
+        inLanguage: "en-IN",
+        publisher: { "@id": `${url}/#business` },
+      },
+      {
+        "@type": "Electrician",
+        "@id": `${url}/#business`,
+        name: siteConfig.name,
+        url: `${url}/`,
+        telephone: siteConfig.phoneTel,
+        priceRange: siteConfig.priceRange,
+        description:
+          "Mixer grinder repair and manufacturing, mixer spare parts, and house and building wiring from a workshop in Ilyas Nagar, Kumaraswamy Layout, Bengaluru.",
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "00:00",
+          closes: "23:59",
         },
-      })),
-    },
+        image: [
+          `${url}/images/hero-desktop-brand.jpg`,
+          `${url}/opengraph-image`,
+        ],
+        logo: `${url}/brand/logo.png`,
+        hasMap: siteConfig.mapsUrl,
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: siteConfig.phoneTel,
+          contactType: "customer service",
+          areaServed: "IN",
+          availableLanguage: ["English", "Kannada"],
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: siteConfig.latitude,
+          longitude: siteConfig.longitude,
+        },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: `${siteConfig.street}, ${siteConfig.neighborhood}`,
+          addressLocality: siteConfig.city,
+          addressRegion: siteConfig.region,
+          postalCode: siteConfig.postalCode,
+          addressCountry: siteConfig.country,
+        },
+        areaServed: [
+          ...primaryAreas.map((area) => ({
+            "@type": "Place" as const,
+            name: `${area.name}, Bengaluru`,
+          })),
+          ...areasServed
+            .filter(
+              (name) =>
+                !primaryAreas.some((area) => area.name === name) &&
+                name !== "South Bengaluru"
+            )
+            .map((name) => ({
+              "@type": "Place" as const,
+              name: `${name}, Bengaluru`,
+            })),
+          { "@type": "City" as const, name: "Bengaluru" },
+        ],
+        sameAs: [siteConfig.instagram],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Services",
+          itemListElement: [...services, ...addedServices].map((service) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              "@id": `${url}${service.href}#service`,
+              name: service.searchTitle,
+              areaServed: "Bengaluru",
+              url: `${url}${service.href}`,
+            },
+          })),
+        },
+      },
+    ],
   };
 }
 
@@ -163,19 +196,19 @@ export function serviceJsonLd(input: {
   name: string;
   description: string;
   path: string;
+  serviceType?: string;
 }) {
   const url = getSiteUrl();
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${url}${input.path}#service`,
     name: input.name,
     description: input.description,
+    serviceType: input.serviceType,
     url: `${url}${input.path}`,
     provider: { "@id": `${url}/#business` },
-    areaServed: [
-      { "@type": "City", "name": "Bengaluru" },
-      { "@type": "Place", "name": "Kumar Swamy Layout" },
-    ],
+    areaServed: primaryAreas.map((area) => area.name),
   };
 }
 
@@ -210,18 +243,5 @@ export function faqJsonLd(
         text: item.answer,
       },
     })),
-  };
-}
-
-export function websiteJsonLd() {
-  const url = getSiteUrl();
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${url}/#website`,
-    name: siteConfig.name,
-    url,
-    inLanguage: "en-IN",
-    publisher: { "@id": `${url}/#business` },
   };
 }

@@ -7,16 +7,16 @@ import { services, siteConfig } from "@/lib/site";
 const service = services.find((item) => item.slug === "ups-repair")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: "UPS Repair in Kumar Swamy Layout",
+  title: "UPS Repair in Kumaraswamy Layout",
   description:
-    "UPS and inverter repair and installation in Kumar Swamy Layout, Bengaluru. Batteries, boards, new home UPS. Call A One Electricals at +91 70225 16735.",
+    "UPS and inverter repair and installation in Kumaraswamy Layout, Bengaluru. Batteries, boards, new home UPS. Call A One Electricals at +91 70225 16735.",
   path: service.href,
   keywords: [
-    "UPS repair Kumar Swamy Layout",
+    "UPS repair Kumaraswamy Layout",
     "UPS installation Bengaluru",
     "inverter repair Bangalore",
-    "home UPS repair Kumar Swamy Layout",
-    "inverter battery Kumar Swamy Layout",
+    "home UPS repair Kumaraswamy Layout",
+    "inverter battery Kumaraswamy Layout",
   ],
 });
 
@@ -32,7 +32,7 @@ const faqs = [
       "Yes. Repair when the board or battery is the fault. Installation when a new flat needs a UPS on the right point, with earthing that will not kill the inverter.",
   },
   {
-    question: "Should I bring the UPS to Kumar Swamy Layout?",
+    question: "Should I bring the UPS to Kumaraswamy Layout?",
     answer: `If you can carry it, yes. The shop is at ${siteConfig.addressDisplay}. If it is fixed inside a cupboard, call ${siteConfig.phoneDisplay} and send a photo of the front panel and the battery.`,
   },
 ];
@@ -41,20 +41,20 @@ export default function UpsRepairPage() {
   return (
     <ServiceStory
       service={service}
-      kicker="UPS repair · Kumar Swamy Layout"
-      title="UPS repair and installation in Kumar Swamy Layout, Bengaluru"
+      kicker="UPS repair · Kumaraswamy Layout"
+      title="UPS repair and installation in Kumaraswamy Layout, Bengaluru"
       lede="A UPS that beeps during a power cut, a battery that will not charge, or a new inverter that still needs wiring. A One Electricals opens them at the Ilyas Nagar shop."
       ctaMessage="Hi A One Electricals, I need UPS repair or installation in Bengaluru."
       faqs={faqs}
-      jsonLdName="UPS repair and installation in Kumar Swamy Layout, Bengaluru"
-      jsonLdDescription="Home UPS and inverter repair, battery work, and new UPS installation from Kumar Swamy Layout."
+      jsonLdName="UPS repair and installation in Kumaraswamy Layout, Bengaluru"
+      jsonLdDescription="Home UPS and inverter repair, battery work, and new UPS installation from Kumaraswamy Layout."
     >
       <h2 className="font-heading text-[1.75rem] font-semibold text-foreground md:text-3xl">
         UPS repair at the shop, not a general electrician listing
       </h2>
       <p>
         South Bengaluru still loses power in the evening. The UPS that looked fine in
-        April dies in October. People search “UPS repair Kumar Swamy Layout” and “inverter
+        April dies in October. People search “UPS repair Kumaraswamy Layout” and “inverter
         repair Bangalore” because they need the Wi-Fi and the lights, not a sales
         brochure.
       </p>
@@ -68,7 +68,7 @@ export default function UpsRepairPage() {
         What a UPS job usually covers
       </h2>
       <ul className="list-disc space-y-2 pl-5">
-        <li>Home inverter and UPS repair at the Kumar Swamy Layout shop.</li>
+        <li>Home inverter and UPS repair at the Kumaraswamy Layout shop.</li>
         <li>Battery checks when the unit switches but dies in minutes.</li>
         <li>New UPS installation with a point and earthing that match the load.</li>
         <li>The beeps, fault lights, and “on but no backup” calls from around Bengaluru.</li>

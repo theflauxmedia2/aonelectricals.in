@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: siteConfig.name,
     short_name: siteConfig.shortName,
     description:
-      "Electrical repair and installation from Kumar Swamy Layout, Bengaluru.",
+      "Electrical repair and installation from Kumaraswamy Layout, Bengaluru.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

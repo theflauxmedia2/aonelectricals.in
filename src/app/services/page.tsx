@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { AreasServedLinks } from "@/components/areas-served-links";
 import { CtaPair, TextNavLink } from "@/components/cta-links";
 import { ImageSlot } from "@/components/image-slot";
 import { JsonLd } from "@/components/json-ld";
@@ -10,15 +11,15 @@ import { photos } from "@/lib/photos";
 import { serviceDirectory } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Services in Kumar Swamy Layout",
+  title: "Electrical & Mixer Repair Services in South Bengaluru",
   description:
-    "A One Electricals services from Kumar Swamy Layout, Bangalore: wiring, geyser, UPS, ceiling fan, UPS wiring, gas stove, water pump, washing machine, air cooler, and mixer repair. Call +91 70225 16735.",
+    "Mixer grinder repair and manufacturing, spare parts, house and building wiring, fault finding and earthing from A One Electricals, Kumaraswamy Layout. Get a quote.",
   path: "/services",
   keywords: [
     "electrical services Bengaluru",
-    "mixer repair Kumar Swamy Layout",
+    "mixer repair Kumaraswamy Layout",
     "house wiring Bangalore",
-    "geyser repair Kumar Swamy Layout",
+    "geyser repair Kumaraswamy Layout",
     "UPS repair Bengaluru",
     "ceiling fan rewind Bangalore",
     "mixer spare parts",
@@ -46,7 +47,7 @@ export default function ServicesPage() {
         data={serviceJsonLd({
           name: "Electrical services in Bengaluru",
           description:
-            "Wiring, mixer repair, geyser, UPS, ceiling fan, spare parts, UPS wiring, gas stove service, water pump, washing machine, and air cooler repair from Kumar Swamy Layout.",
+            "Wiring, mixer repair, geyser, UPS, ceiling fan, spare parts, UPS wiring, gas stove service, water pump, washing machine, and air cooler repair from Kumaraswamy Layout.",
           path: "/services",
         })}
       />
@@ -57,16 +58,16 @@ export default function ServicesPage() {
         ]}
       />
       <PageHero
-        kicker="Service index · Kumar Swamy Layout"
-        title="Electrical services from Kumar Swamy Layout for kitchens, baths, and buildings across Bengaluru"
-        lede="House wiring, geyser and UPS work, ceiling-fan repair, UPS wiring, gas stove service, water pump, washing machine, and air cooler repair. Mixer grinder work is at the shop too, listed at the end."
+        kicker="Service index · South Bengaluru"
+        title="Our services in South Bengaluru"
+        lede="Mixer grinder repair and manufacturing, spare parts, house and building wiring, plus geyser, UPS, ceiling fan, and related appliance work from the Ilyas Nagar workshop."
         image={{
           label: "Workshop photograph",
           photo: photos.workshop,
           ratio: "portrait",
         }}
       >
-        <CtaPair message="Hi A One Electricals, I need a service from Kumar Swamy Layout." />
+        <CtaPair message="Hi A One Electricals, I need a service from Kumaraswamy Layout." />
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-4 py-10 md:py-14">
@@ -100,12 +101,13 @@ export default function ServicesPage() {
         </ul>
         <p className="mt-10 text-sm text-muted-foreground">
           Serving callers from{" "}
-          <TextNavLink href="/kumar-swamy-layout">Kumar Swamy Layout</TextNavLink> and{" "}
-          <TextNavLink href="/bengaluru">around Bengaluru</TextNavLink>. See{" "}
+          <TextNavLink href="/areas/kumaraswamy-layout">Kumaraswamy Layout</TextNavLink> and{" "}
+          <TextNavLink href="/areas">South Bengaluru areas</TextNavLink>. See{" "}
           <TextNavLink href="/about">who runs the shop</TextNavLink> or{" "}
           <TextNavLink href="/contact">call us</TextNavLink>.
         </p>
       </section>
+      <AreasServedLinks />
     </>
   );
 }

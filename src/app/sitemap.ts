@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { neighborhoods } from "@/lib/neighborhoods";
+import { areas } from "@/lib/areas";
 import { addedServices, getSiteUrl, services } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,17 +9,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     ...services.map((service) => service.href),
     ...addedServices.map((service) => service.href),
-    "/kumar-swamy-layout",
-    "/bengaluru",
-    ...neighborhoods.map((area) => area.href),
+    "/areas",
+    ...areas.map((area) => area.href),
     "/about",
     "/contact",
   ];
 
-  const high = new Set(["/contact", "/mixer-repair", "/geyser-repair", "/ups-repair", "/ceiling-fan"]);
+  const high = new Set([
+    "/contact",
+    "/mixer-repair",
+    "/building-wiring",
+    "/spares",
+    "/areas/kumaraswamy-layout",
+    "/areas/jp-nagar",
+  ]);
+
+  const lastModified = new Date("2026-10-01");
 
   return routes.map((path) => ({
     url: `${base}${path}`,
+    lastModified,
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: path === "" ? 1 : high.has(path) ? 0.9 : 0.8,
   }));

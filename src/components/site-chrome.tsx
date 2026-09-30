@@ -45,8 +45,7 @@ export function SiteHeader() {
               <li
                 key={item.href}
                 className={
-                  item.href === "/kumar-swamy-layout" ||
-                  item.href === "/bengaluru" ||
+                  item.href === "/areas/kumaraswamy-layout" ||
                   item.href === "/about"
                     ? "hidden 2xl:block"
                     : undefined
@@ -68,7 +67,7 @@ export function SiteHeader() {
           <a
             href={`tel:${siteConfig.phoneTel}`}
             className="pressable flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground lg:hidden"
-            aria-label={`Call ${siteConfig.phoneDisplay}`}
+            aria-label={`Call ${siteConfig.name}, ${siteConfig.phoneDisplay}`}
           >
             <Phone className="size-4" />
           </a>
@@ -103,7 +102,7 @@ export function SiteFooter() {
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
             Wiring, mixer repair, geyser, UPS, ceiling-fan rewind, spare parts, UPS
             wiring, gas stove service, water pump, washing machine, and air cooler
-            repair from Kumar Swamy Layout. Calls and WhatsApp from around Bengaluru.
+            repair from Kumaraswamy Layout. Calls and WhatsApp from around Bengaluru.
           </p>
           <p className="mt-5 text-sm">
             Call or WhatsApp{" "}
@@ -162,7 +161,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="kicker">Areas</p>
+          <p className="kicker">Areas we serve</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             {coverageAreas
               .filter((area) => area.name !== "South Bengaluru")

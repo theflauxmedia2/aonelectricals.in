@@ -155,7 +155,7 @@ export function InquiryForm() {
             value={area}
             onChange={(event) => setArea(event.target.value)}
             className="h-11"
-            placeholder="Kumar Swamy Layout, Jayanagar, BTM…"
+            placeholder="Kumaraswamy Layout, Jayanagar, BTM…"
           />
         </div>
         <div className="space-y-2">

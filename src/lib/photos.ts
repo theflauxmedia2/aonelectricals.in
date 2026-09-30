@@ -1,20 +1,20 @@
 export const photos = {
   bench: {
     src: "/images/bench-ups.jpg",
-    alt: "A One Electricals technician repairing a UPS at the Kumar Swamy Layout shop",
-    caption: "Repair work at A One Electricals, Kumar Swamy Layout.",
+    alt: "A One Electricals technician repairing a UPS at the Kumaraswamy Layout shop",
+    caption: "Repair work at A One Electricals, Kumaraswamy Layout.",
     position: "32% 42%",
   },
   heroMobile: {
     src: "/images/hero-mobile.jpg",
-    alt: "Electrician repairing an opened UPS at the Kumar Swamy Layout shop",
-    caption: "Repair work at A One Electricals, Kumar Swamy Layout.",
+    alt: "Electrician repairing an opened UPS at the Kumaraswamy Layout shop",
+    caption: "Repair work at A One Electricals, Kumaraswamy Layout.",
     position: "50% 36%",
   },
   heroDesktop: {
     src: "/images/hero-desktop-brand.jpg",
-    alt: "A One Electricals technician repairing a UPS at the Kumar Swamy Layout shop",
-    caption: "Repair work at A One Electricals, Kumar Swamy Layout.",
+    alt: "A One Electricals technician repairing a UPS at the Kumaraswamy Layout shop",
+    caption: "Repair work at A One Electricals, Kumaraswamy Layout.",
     position: "50% 38%",
   },
   switch: {
@@ -50,7 +50,7 @@ export const photos = {
   geyser: {
     src: "/images/geyser-service.jpg",
     alt: "A One Electricals technician repairing an opened storage geyser on a bathroom wall",
-    caption: "Geyser repair and installation of the kind we do on Kumar Swamy Layout visits.",
+    caption: "Geyser repair and installation of the kind we do on Kumaraswamy Layout visits.",
     position: "58% 42%",
   },
   wiringDb: {
@@ -64,6 +64,24 @@ export const photos = {
     alt: "A One Electricals technician repairing an opened mixer grinder on a kitchen counter",
     caption: "Motors opened in the shop, not guessed on a phone call.",
     position: "46% 42%",
+  },
+  mixerBench: {
+    src: "/images/mixer-grinder-bench.jpg",
+    alt: "Mixer grinder with jars, a blade, and a coupler on the workshop bench beside a multimeter",
+    caption: "Mixers checked on the bench, jar by jar.",
+    position: "40% 50%",
+  },
+  mixerMotorOpen: {
+    src: "/images/mixer-motor-portrait.jpg",
+    alt: "Mixer grinder body opened to show the copper motor winding, with a jar, blade, and coupler",
+    caption: "The motor opened before anyone quotes a rewind.",
+    position: "35% 55%",
+  },
+  geyserWall: {
+    src: "/images/geyser-wall.jpg",
+    alt: "Storage geyser mounted on a tiled bathroom wall with copper inlet and outlet pipes",
+    caption: "Geyser on the wall, ready for a point and an isolator.",
+    position: "45% 45%",
   },
   spares: {
     src: "/images/spares-parts-portrait.jpg",
@@ -86,7 +104,7 @@ export const photos = {
   ups: {
     src: "/images/ups-inverter-portrait.jpg",
     alt: "Home inverter and tubular batteries in a Bengaluru apartment utility corner",
-    caption: "Home UPS and inverter work from the Kumar Swamy Layout shop.",
+    caption: "Home UPS and inverter work from the Kumaraswamy Layout shop.",
     position: "50% 46%",
   },
   upsWide: {
@@ -98,7 +116,7 @@ export const photos = {
   upsWiring: {
     src: "/images/ups-wiring-service.jpg",
     alt: "A One Electricals technician wiring a home UPS beside the distribution board and batteries",
-    caption: "UPS wiring from the Kumar Swamy Layout shop.",
+    caption: "UPS wiring from the Kumaraswamy Layout shop.",
     position: "42% 42%",
   },
   fanInstall: {
@@ -116,37 +134,37 @@ export const photos = {
   washer: {
     src: "/images/washing-machine-service.jpg",
     alt: "A One Electricals technician repairing an opened front-load washing machine",
-    caption: "Washing machine repair from the Kumar Swamy Layout shop.",
+    caption: "Washing machine repair from the Kumaraswamy Layout shop.",
     position: "62% 42%",
   },
   gasStove: {
     src: "/images/gas-stove-service.jpg",
     alt: "A One Electricals technician servicing an opened glass gas stove on a kitchen counter",
-    caption: "Gas stove service from the Kumar Swamy Layout shop.",
+    caption: "Gas stove service from the Kumaraswamy Layout shop.",
     position: "55% 45%",
   },
   waterPump: {
     src: "/images/water-pump-service.jpg",
     alt: "A One Electricals technician repairing a water pump motor at the shop",
-    caption: "Water pump motor repair from the Kumar Swamy Layout shop.",
+    caption: "Water pump motor repair from the Kumaraswamy Layout shop.",
     position: "48% 42%",
   },
   workshop: {
     src: "/images/workshop-tools-portrait.jpg",
     alt: "Shop table with a meter, cable, and an open fan motor",
-    caption: "The Kumar Swamy Layout shop: tools, cable, and the job in front of you.",
+    caption: "The Kumaraswamy Layout shop: tools, cable, and the job in front of you.",
     position: "50% 42%",
   },
   neighborhood: {
     src: "/images/jp-nagar-house-portrait.jpg",
-    alt: "Independent house in a South Bengaluru neighborhood like Kumar Swamy Layout",
+    alt: "Independent house in a South Bengaluru neighborhood like Kumaraswamy Layout",
     caption: "South Bengaluru houses of the kind we wire and visit.",
     position: "50% 40%",
   },
   city: {
     src: "/images/bengaluru-street-landscape.jpg",
     alt: "Residential street in Bengaluru with independent houses and service wires",
-    caption: "The shop is in Kumar Swamy Layout. The phone is for the city.",
+    caption: "The shop is in Kumaraswamy Layout. The phone is for the city.",
     position: "50% 48%",
   },
 } as const;
