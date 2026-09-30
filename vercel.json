@@ -2,13 +2,12 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "aonelectricalsin.vercel.app" }],
-      "destination": "https://aonelectricals.in/:path*",
-      "statusCode": 301
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.aonelectricals.in" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "aonelectricalsin.vercel.app"
+        }
+      ],
       "destination": "https://aonelectricals.in/:path*",
       "statusCode": 301
     }
@@ -16,8 +15,18 @@
   "headers": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "aonelectricalsin.vercel.app" }],
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+      "has": [
+        {
+          "type": "host",
+          "value": "aonelectricalsin.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ]
 }

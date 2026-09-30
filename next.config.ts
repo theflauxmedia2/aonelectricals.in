@@ -42,12 +42,6 @@ const nextConfig: NextConfig = {
         destination: "/areas/bannerghatta-road",
         permanent: true,
       },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.aonelectricals.in" }],
-        destination: "https://aonelectricals.in/:path*",
-        permanent: true,
-      },
     ];
   },
   async headers() {

@@ -20,12 +20,14 @@ export function proxy(request: NextRequest) {
   }
 
   const host = request.headers.get("host")?.split(":")[0]?.toLowerCase();
-  if (!host || host === canonical.hostname) {
+  if (!host || host === canonical.hostname || host === `www.${canonical.hostname}`) {
     return NextResponse.next();
   }
 
+  // www <-> apex is handled by Vercel's domain settings; redirecting it here as
+  // well creates a loop whenever the dashboard picks the other direction.
   const shouldRedirect =
-    host === `www.${canonical.hostname}` || host.endsWith(".vercel.app");
+    process.env.VERCEL_ENV === "production" && host.endsWith(".vercel.app");
 
   if (!shouldRedirect) {
     return NextResponse.next();
